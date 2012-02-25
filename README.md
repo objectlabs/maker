@@ -18,8 +18,16 @@ The core of Maker is comprised of two operators:
 The empty object
 
 ```
-o({});
+o({})
 ```
+
+Simple object
+
+```
+o({a : 1,
+   b : 2});
+```
+
 
 Use in the _classical_ style
 
@@ -30,10 +38,10 @@ var function Animal() {
    this.weight = 0;
 }
 
-o({ _type : Animal,
-    name : "Jo",
-    age : 12,
-    weight : 21 });
+o({_type : Animal,
+   name : "Jo",
+   age : 12,
+   weight : 21});
 ```
 
 
