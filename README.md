@@ -15,11 +15,27 @@ The core of Maker is comprised of two operators:
 
 ### The ```o``` operator
 
+```
+o({});
+```
+
+```
+var function Animal() {
+   this.name = "Some Animal";
+   this.age = 0;
+   this.weight = 0;
+}
+
+o({ _type : Animal,
+    name : "Jo",
+    age : 12,
+    weight : 21 });
+```
+
+
 #### The ```oo``` operator
 
-### The ```o(...)``` operator
 
-#### The ```oo(...)``` operator
 
 
 Installing Maker
