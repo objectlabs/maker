@@ -1,7 +1,17 @@
 Maker
 ====
 
-Maker is a simple and powerful OO toolkit for Javascript
+Maker is a simple and powerful OO toolkit for Javascript.
+
+The central design goal of Maker is to provide a completely
+delcarative mechanism for defining classes and instances of classes
+(objects). Maker accompdates both the __classical__ and __prototype__
+patterns of doing OO in Javscript in a simple and unified manner. 
+
+The core of Maker is comprised of two operators:
+
+* ```o```
+* ```oo```
 
 Installing Maker
 ----------
