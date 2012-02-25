@@ -21,7 +21,7 @@ The empty object
 o({});
 ```
 
-Use in the ___classical__style
+Use in the _classical_ style
 
 ```
 var function Animal() {
