@@ -8,14 +8,14 @@ Installing Maker
 
 Using npm 
 ```
-$ cd <your-app>
+% cd <your-app>
 % npm install maker
 ```
 
 From git:
 ```
 % git clone git@github.com:objectlabs/maker.git
-$ cd <your-app>
+% cd <your-app>
 % npm install <path-to-maker>
 ```
 To run unit tests
