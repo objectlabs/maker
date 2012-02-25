@@ -20,6 +20,10 @@ From git:
 % cd <your-app>
 % npm install <path-to-maker>
 ```
+
+hello ```there``` eggyman
+
+
 To run unit tests
 -----------------
 
