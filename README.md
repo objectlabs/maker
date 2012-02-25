@@ -13,9 +13,9 @@ The core of Maker is comprised of two operators:
 * ```o``` - makes objects
 * ```oo``` - makes classes
 
-### ```o```
+### The ```o``` operator
 
-#### ```o```
+#### The ```oo``` operator
 
 Installing Maker
 ----------
