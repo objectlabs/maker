@@ -21,6 +21,8 @@ The empty object
 o({});
 ```
 
+Use in the ___classical__style
+
 ```
 var function Animal() {
    this.name = "Some Animal";
