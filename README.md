@@ -17,6 +17,11 @@ The core of Maker is comprised of two operators:
 
 #### The ```oo``` operator
 
+### The ```o(...)``` operator
+
+#### The ```oo(...)``` operator
+
+
 Installing Maker
 ----------
 
