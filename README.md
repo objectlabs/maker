@@ -7,12 +7,14 @@ Installing Maker
 ----------
 
 Using npm 
+
 ```
 % cd <your-app>
 % npm install maker
 ```
 
 From git:
+
 ```
 % git clone git@github.com:objectlabs/maker.git
 % cd <your-app>
