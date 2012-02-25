@@ -10,8 +10,8 @@ patterns of doing OO in Javscript in a simple and unified manner.
 
 The core of Maker is comprised of two operators:
 
-* ```o```
-* ```oo```
+* ```o``` - makes objects
+* ```oo``` - makes classes
 
 Installing Maker
 ----------
