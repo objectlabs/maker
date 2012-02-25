@@ -1,0 +1,14 @@
+{
+  "name": "maker",
+  "version": "0.1.0",
+  "description": "Simple object framework for Javascript",
+  "keywords": ["maker", "makerjs"],
+  "author": "Will Shulman <will@objectlabs.com>",
+  "main": "./lib/maker.js",
+  "directories" : {
+    "lib" : "./lib"
+  },
+  "engines": { "node": ">= 0.5.2" },
+  "dependencies" : {},
+  "preferGlobal": false
+}
