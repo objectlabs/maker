@@ -16,6 +16,7 @@ The core of Maker is comprised of two operators:
 ### The ```o``` operator
 
 The empty object
+
 ```
 o({});
 ```
