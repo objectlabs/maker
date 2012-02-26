@@ -73,9 +73,9 @@ Specifying another object as a prototype
 var o = require('maker').o;
 
 var Person = o({
-   name = "Some Person",
-   email = null,
-   age = 0
+   name : "Some Person",
+   email : null,
+   age : 0
 });
 
 o({_type : Person,
