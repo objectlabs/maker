@@ -50,20 +50,21 @@ Use in the _classical_ style
 ```
 var o = require('maker').o;
 
-function Animal() {
-   this.name = "Some Animal";
+function Person() {
+   this.name = "Some Person";
+   this.email = null,
    this.age = 0;
-   this.weight = 0;
 }
 
-o({_type : Animal,
-   name : "Jo",
-   age : 12,
+o({_type : Person,
+   name : "Jo Smith",
+   email : "jo@smith.com",
+   age : 35,
    weight : 21});
 ```
 
 
-#### The ```oo``` operator
+### The ```oo``` operator
 
 
 
