@@ -50,7 +50,7 @@ o({a : 1,
 ```
 
 
-Specifying a class via a consctructor ```Function``` (in the _classical_ style)
+Specifying a class via a constructor ```Function``` (in the _classical_ style)
 
 ```
 var o = require('maker').o;
@@ -64,10 +64,25 @@ function Person() {
 o({_type : Person,
    name : "Jo Smith",
    email : "jo@smith.com",
-   age : 35,
-   weight : 21});
+   age : 35});
 ```
 
+Specifying another object as a prototype
+
+```
+var o = require('maker').o;
+
+var Person = o({
+   name = "Some Person",
+   email = null,
+   age = 0
+});
+
+o({_type : Person,
+   name : "Jo Smith",
+   email : "jo@smith.com",
+   age : 35});
+```
 
 ### The ```oo``` operator
 
