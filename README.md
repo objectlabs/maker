@@ -20,7 +20,7 @@ single object datum argument and returns an object based on the
 supplied specification. The specification is an object that consists
 of:
 
-* A ```_type``` field, whose value may be either a ```Function``` or
+* An optional ```_type``` field, whose value may be either a ```Function``` or
   (representing a class constructor) or another object. 
 
 * A series of name / value pairs specifying the fields of the object
@@ -45,7 +45,7 @@ o({a : 1,
 ```
 
 
-Use in the _classical_ style
+Specifying a class via a consctructor ```Function``` (in the _classical_ style)
 
 ```
 var o = require('maker').o;
