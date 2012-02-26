@@ -40,6 +40,12 @@ var o = require('maker').o;
 o({})
 ```
 
+which is the same as
+
+```
+o({_type : Object})
+```
+
 Simple object
 
 ```
