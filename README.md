@@ -3,7 +3,7 @@ o({})
 
 ***
 
-o({}) | Maker
+Maker
 ----------
 
 Maker is a simple and powerful OO toolkit for Javascript.
