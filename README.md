@@ -10,10 +10,20 @@ patterns of doing OO in Javscript in a simple and unified manner.
 
 The core of Maker is comprised of two operators:
 
-* ```o``` - makes objects
-* ```oo``` - makes classes
+* The ```o``` operator makes objects
+* The ```oo``` operator makes classes
 
 ### The ```o``` operator
+
+The ```o``` operator is used to make objects. The operator takes a
+single object datum argument and returns an object based off the
+supplied specification. The specification is an object that consists
+of:
+
+* A ```_type``` field, whose value may be either a ```Function``` or
+  or another object. 
+
+* A foo baer
 
 The empty object
 
