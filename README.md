@@ -18,12 +18,16 @@ The core of Maker is comprised of two operators:
 The empty object
 
 ```
+var o = require('maker').o;
+
 o({})
 ```
 
 Simple object
 
 ```
+var o = require('maker').o;
+
 o({a : 1,
    b : 2});
 ```
@@ -32,6 +36,8 @@ o({a : 1,
 Use in the _classical_ style
 
 ```
+var o = require('maker').o;
+
 function Animal() {
    this.name = "Some Animal";
    this.age = 0;
