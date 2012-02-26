@@ -5,8 +5,8 @@ Maker is a simple and powerful OO toolkit for Javascript.
 
 The central design goal of Maker is to provide a completely
 delcarative mechanism for defining classes and instances of classes
-(objects). Maker accompdates both the __classical__ and __prototype__
-patterns of doing OO in Javscript in a simple and unified manner. 
+(objects). Maker accomodates both the _classical_ and _prototype_
+patterns of implementing OO in a simple and unified manner. 
 
 The core of Maker is comprised of two operators:
 
@@ -16,14 +16,16 @@ The core of Maker is comprised of two operators:
 ### The ```o``` operator
 
 The ```o``` operator is used to make objects. The operator takes a
-single object datum argument and returns an object based off the
+single object datum argument and returns an object based on the
 supplied specification. The specification is an object that consists
 of:
 
 * A ```_type``` field, whose value may be either a ```Function``` or
   or another object. 
 
-* A foo baer
+* A series of name / value pairs specifying the fields of the object
+
+##### Some examples
 
 The empty object
 
