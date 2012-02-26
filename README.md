@@ -32,7 +32,7 @@ o({a : 1,
 Use in the _classical_ style
 
 ```
-var function Animal() {
+function Animal() {
    this.name = "Some Animal";
    this.age = 0;
    this.weight = 0;
