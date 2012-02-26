@@ -21,7 +21,7 @@ supplied specification. The specification is an object that consists
 of:
 
 * A ```_type``` field, whose value may be either a ```Function``` or
-  or another object. 
+  (representing a class constructor) or another object. 
 
 * A series of name / value pairs specifying the fields of the object
 
