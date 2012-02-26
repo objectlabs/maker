@@ -93,6 +93,8 @@ argument. In this case the object specification is the specification
 for a class. The ```_type``` field can be used to specify superclass
 to extend and must be a ```Function``` value. 
 
+##### Some examples
+
 ```
 var o = require('maker').o;
 var oo = require('maker').oo;
