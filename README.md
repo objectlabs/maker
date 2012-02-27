@@ -90,6 +90,26 @@ o({_type : Person,
    age : 35});
 ```
 
+Nested objects
+
+```
+var o = require('maker').o;
+
+o({_type : Person,
+   name : "Jo Smith",
+   email : "jo@smith.com",
+   age : 35,
+   address = {
+      _type : Address
+      street : "100 Foo St.",
+      city : "San Francisco",
+      state : "CA",
+      zip : 93212
+   }
+});
+
+```
+
 ### The ```oo``` operator
 
 The ```oo``` operator is used to make classes. All ```oo```
