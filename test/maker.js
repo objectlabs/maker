@@ -130,7 +130,7 @@ function testSideEffects() {
     b.stuff.s = -1;
     assert.ok(b.stuff.s === -1);
     var b2 = new B();
-//   assert.ok(b2.stuff.s === 1); // this does not work amazingly (js issue)
+    assert.ok(b2.stuff.s !== 1); 
 
     var S = o({stuff : {x : 1}});
     var T = o({_type : S});
@@ -140,7 +140,8 @@ function testSideEffects() {
     assert.ok(t1.stuff.x === -1);
     var t2 = o({_type : T});
     assert.ok(t2.stuff.x === 1);
-
+    var t3 = o({_type : T, s : {_type : S}});
+    assert.ok(t3.s.stuff.x === 1);
 }
 
 /*******************************************************************************
