@@ -113,11 +113,12 @@ o({_type : Person,
 ### The ```oo``` operator
 
 The ```oo``` operator is used to make classes. All ```oo```
-expressions evaluate to a value that is a ```Function```. Like the
-```o``` operator, the ```oo``` operator takes a single object
-argument. In this case the object specification is the specification
-for a class. The ```_type``` field can be used to specify superclass
-to extend and must be a ```Function``` value. 
+expressions evaluate to a value that is a ```Function``` that can be
+used as a constructor. Like the ```o``` operator, the ```oo```
+operator takes a single object argument. In this case the object
+specification is the specification for a class. The ```_type``` field
+can be used to specify superclass to extend and must be a
+```Function``` value.
 
 ##### Some examples
 
@@ -166,9 +167,6 @@ From git:
 % cd <your-app>
 % npm install <path-to-maker>
 ```
-
-hello ```there``` eggyman
-
 
 To run unit tests
 -----------------
