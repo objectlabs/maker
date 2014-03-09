@@ -13,7 +13,8 @@
 
     "main": "./lib/maker.js",
     "directories" : {
-        "lib" : "./lib"
+        "lib" : "./lib",
+        "bin" : "./bin"
     },
     "engines": { "node": ">= 0.5.2" },
     "dependencies" : {},
