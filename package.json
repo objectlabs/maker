@@ -6,6 +6,11 @@
     "contributors": [
         "Will Shulman <will@objectlabs.com>"
     ],
+    "repository" : { 
+        "type" : "git",
+        "url" : "https://github.com/objectlabs/maker.git"
+    },
+
     "main": "./lib/maker.js",
     "directories" : {
         "lib" : "./lib"
