@@ -22,8 +22,8 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-var o = require('../lib/maker').o;
-var oo = require('../lib/maker').oo;
+var o = require('../lib/maker').o(module);
+var oo = require('../lib/maker').oo(module);
 var assert = require('assert');
 
 function Animal() {};

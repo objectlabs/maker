@@ -4,7 +4,7 @@ if (!path) {
    return
 }
 
-var result = require('maker')._o(path)
+var result = require('maker')._o(module)(path)
 console.log(result)
 
 
