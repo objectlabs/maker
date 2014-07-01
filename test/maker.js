@@ -53,7 +53,8 @@ B.prototype.constructor = B;
  */
 var C = oo({
     _type : B,
-    stuff2 : [ { a : 1, b : 2 }, { aa : 11, bb : 22 } ]
+    stuff2: { s : 1 },
+    stuff3 : [ { a : 1, b : 2 }, { aa : 11, bb : 22 } ]
 });
 
 /*******************************************************************************
@@ -149,12 +150,48 @@ function testSideEffects() {
     var a2 = new A();
     assert.ok(a2.stuff.s === 1);
 
-    var b = new B();
+    var b = o({
+        _type: B
+    })
     assert.ok(b.stuff.s === 1);
     b.stuff.s = -1;
     assert.ok(b.stuff.s === -1);
-    var b2 = new B();
-    assert.ok(b2.stuff.s !== 1); 
+    var b2 = o({
+        _type: B
+    })
+    assert.ok(b2.stuff.s === 1); 
+
+    var c = o({
+        _type: C
+    })
+    var c2 = o({
+        _type: C
+    })
+    var c3 = new C()
+    var c4 = new C()
+    assert.ok(c.stuff2.s === 1);
+    c.stuff2.s = -1;
+    assert.ok(c.stuff2.s === -1);
+    assert.ok(c2.stuff2.s === 1); 
+    assert.ok(c3.stuff2.s === 1); 
+    assert.ok(c4.stuff2.s === 1); 
+    c3.stuff2.s = -1;
+    assert.ok(c4.stuff2.s !== 1); 
+
+    var d = new D()
+    var d2 = new D()
+    assert.ok(d.stuff2.s === 1);
+    d.stuff2.s = -1;
+    assert.ok(d.stuff2.s === -1);
+    assert.ok(d2.stuff2.s !== 1); 
+
+    // this is actually an important variant
+    var c5 = new C()
+    var d3 = new D()
+    assert.ok(c5.stuff2.s === -1);
+    assert.ok(d3.stuff2.s === -1);
+    c5.stuff2.s = 1
+    assert.ok(d3.stuff2.s === -1); 
 
     var S = o({stuff : {x : 1}});
     var T = o({_type : S});
