@@ -162,11 +162,26 @@ function testSideEffects() {
     assert.ok(b2.stuff.s === 1); 
 
     var c = o({
-        _type: C
+        _type: C,
+        say: function() {
+            return this._super('say')() + " " + "yo"
+        }
     })
     var c2 = o({
         _type: C
     })
+
+    var CC = oo({ 
+        _type: C,
+        say: function() {
+            return this._super('say')() + " " + "yoman"
+        }
+    })
+
+    var cc = o({
+        _type: CC
+    })
+
     var c3 = new C()
     var c4 = new C()
     assert.ok(c.stuff2.s === 1);
@@ -177,6 +192,9 @@ function testSideEffects() {
     assert.ok(c4.stuff2.s === 1); 
     c3.stuff2.s = -1;
     assert.ok(c4.stuff2.s !== 1); 
+    console.log(c4.say())
+    assert.ok(c.say() === "a yo")
+    assert.ok(cc.say() === "a yoman")
 
     var d = new D()
     var d2 = new D()
