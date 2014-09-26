@@ -139,7 +139,7 @@ var Dog = oo({
    _type : Animal,
    name : "some dog",
    say : function() {
-      return "woof: " + this.name;
+      return "woof: " + this._super('say')()    // delegating to superclass
    }
 });
 
