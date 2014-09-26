@@ -1,8 +1,18 @@
+var cwd = process.cwd()
 var path = process.argv[2]
+
 if (!path) {
    console.log("Please specify a path")
    return
 }
+
+//
+if (path[0] === '/') {
+    path = path.substring(1)
+} else {
+    path = cwd + '/' + path    
+}
+//
 
 require.main.__mainComponentPath = path
 var result = require('maker')._o(module)(path)
