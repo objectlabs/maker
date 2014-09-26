@@ -35,7 +35,7 @@ of:
 The empty object
 
 ```
-var o = require('maker').o;
+var o = require('maker').o(module)
 
 o({})
 ```
@@ -49,7 +49,7 @@ o({_type : Object})
 Simple object
 
 ```
-var o = require('maker').o;
+var o = require('maker').o(module)
 
 o({a : 1,
    b : 2});
@@ -59,7 +59,7 @@ o({a : 1,
 Specifying a class via a constructor ```Function``` (in the _classical_ style)
 
 ```
-var o = require('maker').o;
+var o = require('maker').o(module)
 
 function Person() {
    this.name = "Some Person";
@@ -76,7 +76,7 @@ o({_type : Person,
 Specifying another object as a prototype
 
 ```
-var o = require('maker').o;
+var o = require('maker').o(module)
 
 var Person = o({
    name : "Some Person",
@@ -93,7 +93,7 @@ o({_type : Person,
 Nested objects
 
 ```
-var o = require('maker').o;
+var o = require('maker').o(module)
 
 o({_type : Person,
    name : "Jo Smith",
@@ -123,8 +123,8 @@ can be used to specify superclass to extend and must be a
 ##### Some examples
 
 ```
-var o = require('maker').o;
-var oo = require('maker').oo;
+var o = require('maker').o(module)
+var oo = require('maker').oo(module)
 
 var Animal = oo({
    name : "some animal",
