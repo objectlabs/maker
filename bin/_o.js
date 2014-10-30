@@ -29,7 +29,7 @@ if (result._init) {
     console.log("options:", options)
     // configure option properties
     configureOptionProperties(result, cmdargs, options)
-    result._init(options._, options)
+    result._init(options._, options) // XXX why both just do named args
 }
 
 console.log(result)
