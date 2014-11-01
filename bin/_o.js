@@ -25,14 +25,14 @@ if (result._init) {
         argparser.options(cmdargs)
     }
     var options = argparser.parse(process.argv.slice(3))
-    console.log("args:", options._)
-    console.log("options:", options)
+//    console.log("args:", options._)
+//    console.log("options:", options)
     // configure option properties
     configureOptionProperties(result, cmdargs, options)
     result._init(options._, options) // XXX why both just do named args
 }
 
-console.log(result)
+//console.log(result)
 
 /*******************************************************************************
  * configureOptionProperties
