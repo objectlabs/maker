@@ -221,7 +221,7 @@ Object creation via the ```o``` operator follows this sequence:
 3. If the object has an ```_init``` method that method is called
 4. The newly created object is returned
 
-Example using ```_init```
+Example using ```_init```:
 ```
 o({
   port: 8080,
@@ -238,8 +238,44 @@ o({
 
 Maker allows for the easy creation of command line programs with built-in argument parsing. You can use the ```_init``` method to define a top-level entry point, or "main" function, to your application. 
 
-Example
+Example:
 ```
+var o = require('maker').o(module);
+var _o = require('maker')._o(module);
+
+module.exports = o({
+  port: null,
+  verbose: false,
+  _app: null,
+  
+  cmdargs: { // supports nomnom definitions (see https://github.com/harthur/nomnom)
+    port: {
+      abbr: "p",
+      help: "port server should listen on",
+      required: false,
+      default: 8080
+    },
+    verbose: {
+      abbr: "v",
+      help: "enable verbose logging",
+      required: false,
+      default: false,
+      property: true // set this value as a field on this object when parsed as a cmdline option
+    }
+  }
+  
+  _init: function(options) {
+    this.port = options.port
+    this._app = express.createServer()
+    this._app.listen(this.port)
+  }
+})
+```
+
+You can then call your program from the commandline like this:
+
+```
+% node <path-to-your-module> <options>
 ```
 
 
