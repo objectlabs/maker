@@ -290,3 +290,7 @@ Options:
 
 The arg-parser used by Maker is ```nomnom```. For full documentation on how you specify ```cmdargs``` please see https://github.com/harthur/nomnom
 
+### Todo
+* Document _super
+* Document _o
+
