@@ -278,4 +278,15 @@ You can then call your program from the commandline like this:
 % node <path-to-your-module> <options>
 ```
 
+Example:
+```
+% node SimpleCmdlineApp -h
+Usage: node SimpleCmdlineApp [options]
+
+Options:
+   -p, --port      port server should listen on [8080]
+   -v, --verbose   enable verbose logging  [false]
+```
+
+The arg-parser used by Maker is ```nomnom```. For full documentation on how you specify ```cmdargs``` please see https://github.com/harthur/nomnom
 
