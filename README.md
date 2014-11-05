@@ -234,5 +234,12 @@ o({
 })
 ```
 
+### Creating command line applications with Maker
+
+Maker allows for the easy creation of command line programs with built-in argument parsing. You can use the ```_init``` method to define a top-level entry point, or "main" function, to your application. 
+
+Example
+```
+```
 
 
