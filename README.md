@@ -177,3 +177,20 @@ var fido = o({
 });
 ```
 
+### Defining properties
+
+Properties can be defined as simple fieldname / value pairs
+
+```
+{
+  name: "John Smith"
+}
+```
+
+or they can be define more explicitly as you would with Javascript's [```Object.defineProperty```](http://yahoo.com)
+
+```
+{
+  name: "John Smith"
+}
+```
