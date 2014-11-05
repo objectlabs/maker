@@ -182,48 +182,48 @@ var fido = o({
 Properties can be defined as simple fieldname / value pairs
 
 ```
-{
+o({
   name: "John Smith"
-}
+})
 ```
 
 or they can be define more explicitly as you would with Javascript's [```Object.defineProperty```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 
 ```
-{
+o({
   name: $property: {
     value: "John Smith"
     configurable: true,
     enumerable: true,
     writable: false
-  }
+  })
 }
 ```
 
 You can also define dynamic properties via getters and setters
 
 ```
-{
+o({
   now: $property: {
     get: function() {
       return new Date()
     }
   }
-}
+})
 ```
 
 ### Object lifecycle and _init
 
 Object creation via the ```o``` operator follows this sequence:
 
-1. The ```_type``` field is evaluated. If it is a Class constructor a new instance of that Class is created. If it is an object that object is cloned and used as the new objects prototype. 
+1. The ```_type``` field is evaluated. If it is a Class constructor a new instance of that Class is created. If it is an object that object is cloned and used as the new objects prototype. If no ```_type``` is supplied the default value of ```Object``` is used.
 2. All field definitions in the object passed to the ```o``` operator are added to the newly created object
 3. If the object has an ```_init``` method that method is called
 4. The newly created object is returned
 
 Example using ```_init```
 ```
-{
+o({
   port: 8080,
   app: null,
   db: null,
@@ -231,6 +231,8 @@ Example using ```_init```
     this.app = express.createServer()
     this.app.listen(this.port)
   }
-}
+})
 ```
+
+
 
