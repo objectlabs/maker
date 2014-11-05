@@ -187,10 +187,27 @@ Properties can be defined as simple fieldname / value pairs
 }
 ```
 
-or they can be define more explicitly as you would with Javascript's [```Object.defineProperty```](http://yahoo.com)
+or they can be define more explicitly as you would with Javascript's [```Object.defineProperty```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 
 ```
 {
-  name: "John Smith"
+  name: $property: {
+    value: "John Smith"
+    configurable: true,
+    enumerable: true,
+    writable: false
+  }
+}
+```
+
+You can also define dynamic properties via getters and setters
+
+```
+{
+  now: $property: {
+    get: function() {
+      return new Date()
+    }
+  }
 }
 ```
