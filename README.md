@@ -13,6 +13,34 @@ delcarative mechanism for defining classes and instances of classes
 (objects). Maker accomodates both the _classical_ and _prototype_
 patterns of implementing OO in a simple and unified manner. 
 
+Installing Maker
+----------
+
+Using npm 
+
+```
+% cd <your-app>
+% npm install maker
+```
+
+From git:
+
+```
+% git clone git@github.com:objectlabs/maker.git
+% cd <your-app>
+% npm install <path-to-maker>
+```
+
+To run unit tests
+-----------------
+
+```node
+% node ./test/all.js
+```
+
+Using Maker
+----------
+
 The core of Maker is comprised of two operators:
 
 * The ```o``` operator makes objects
@@ -149,28 +177,3 @@ var fido = o({
 });
 ```
 
-
-Installing Maker
-----------
-
-Using npm 
-
-```
-% cd <your-app>
-% npm install maker
-```
-
-From git:
-
-```
-% git clone git@github.com:objectlabs/maker.git
-% cd <your-app>
-% npm install <path-to-maker>
-```
-
-To run unit tests
------------------
-
-```node
-% node ./test/all.js
-```
