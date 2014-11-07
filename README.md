@@ -41,10 +41,11 @@ To run unit tests
 Using Maker
 ----------
 
-The core of Maker is comprised of two operators:
+The core of Maker is comprised of three operators:
 
 * The ```o``` operator makes objects
 * The ```oo``` operator makes classes
+* The ```_o``` operator resolves components by name
 
 ### The ```o``` operator
 
