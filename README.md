@@ -148,6 +148,10 @@ specification is the specification for a class. The ```_type``` field
 can be used to specify superclass to extend and must be a
 ```Function``` value.
 
+##### _super
+
+You can use the ```_super``` method to call methods on your superclass. The method takes the name of the method as a string and returns a function. 
+
 ##### Some examples
 
 ```
