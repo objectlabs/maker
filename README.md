@@ -196,22 +196,26 @@ or they can be define more explicitly as you would with Javascript's [```Object.
 
 ```
 o({
-  name: $property: {
-    value: "John Smith"
-    configurable: true,
-    enumerable: true,
-    writable: false
-  })
-}
+  name: {
+    $property: {
+      value: "John Smith"
+      configurable: true,
+      enumerable: true,
+      writable: false
+    }
+  } 
+}) 
 ```
 
 You can also define dynamic properties via getters and setters
 
 ```
 o({
-  now: $property: {
-    get: function() {
-      return new Date()
+  now: {
+    $property: {
+      get: function() {
+        return new Date()
+      }
     }
   }
 })
