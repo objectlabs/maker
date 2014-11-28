@@ -1,0 +1,5 @@
+Need to revamp clone which should also fix instanceof and cycle detection
+  - had issue with cylce an process.stdin
+  - maybe drive deep cloning by $property tag
+    - could be tricky with super super classes
+
