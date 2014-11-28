@@ -18,35 +18,8 @@ if (path[0] === '/') {
 // resolve main service
 require.main.__mainComponentPath = path
 var result = require('maker')._o(module)(path)
-if (result._init) {
-    // if service defines cmdargs use them
-    var cmdargs = result.cmdargs
-    if (cmdargs) {
-        argparser.options(cmdargs)
-    }
-    var options = argparser.parse(process.argv.slice(3))
-//    console.log("args:", options._)
-//    console.log("options:", options)
-    // configure option properties
-    configureOptionProperties(result, cmdargs, options)
-    result._init(options._, options) // XXX why both just do named args
-}
 
 //console.log(result)
-
-/*******************************************************************************
- * configureOptionProperties
- */        
-function configureOptionProperties(obj, optionDefinitions, options) {
-    if (optionDefinitions) {
-        for (var option in options) {
-            if (optionDefinitions[option] && optionDefinitions[option].property) {
-                var optionValue = options[option]
-                obj[option] = optionValue
-            }
-        }
-    }
-}
 
 /*******************************************************************************
  * printUsage
