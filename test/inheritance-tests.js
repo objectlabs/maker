@@ -34,6 +34,10 @@ var Cat = oo({
   }
 })
 
+var SubAnimal = oo({
+  _type: Animal
+})
+
 var a = o({
   _type: Animal
 })
@@ -61,10 +65,16 @@ assert(c2.name == "fluffy")
 assert(c2 instanceof Animal)
 assert(c2 instanceof Cat)
 
-c.cache.a = 1
-assert(c2.cache.a == undefined)
+c.instanceCache.a = 1
+assert(c2.instanceCache.a == undefined)
 
 assert(c2.meow == "Meow: fluffy")
+
+// no constructor
+var sa = o({
+  _type: SubAnimal
+})
+assert(sa.isHappy)
 
 /*
 a.say()
