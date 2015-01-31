@@ -63,7 +63,7 @@ of:
 
 The empty object
 
-```
+```node
 var o = require('maker').o(module)
 
 o({})
@@ -71,13 +71,13 @@ o({})
 
 which is the same as
 
-```
+```node
 o({_type : Object})
 ```
 
 Simple object
 
-```
+```node
 var o = require('maker').o(module)
 
 o({a : 1,
@@ -87,7 +87,7 @@ o({a : 1,
 
 Specifying a class via a constructor ```Function``` (in the _classical_ style)
 
-```
+```node
 var o = require('maker').o(module)
 
 function Person() {
@@ -104,7 +104,7 @@ o({_type : Person,
 
 Specifying another object as a prototype
 
-```
+```node
 var o = require('maker').o(module)
 
 var Person = o({
@@ -121,7 +121,7 @@ o({_type : Person,
 
 Nested objects
 
-```
+```node
 var o = require('maker').o(module)
 
 o({_type : Person,
@@ -155,7 +155,7 @@ You can use the ```_super``` method to call methods on your superclass. The meth
 
 ##### Some examples
 
-```
+```node
 var o = require('maker').o(module)
 var oo = require('maker').oo(module)
 
@@ -186,7 +186,7 @@ var fido = o({
 
 Properties can be defined as simple fieldname / value pairs
 
-```
+```node
 o({
   name: "John Smith"
 })
@@ -194,7 +194,7 @@ o({
 
 or they can be define more explicitly as you would with Javascript's [```Object.defineProperty```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 
-```
+```node
 o({
   name: {
     $property: {
@@ -209,7 +209,7 @@ o({
 
 You can also define dynamic properties via getters and setters
 
-```
+```node
 o({
   now: {
     $property: {
@@ -231,7 +231,7 @@ Object creation via the ```o``` operator follows this sequence:
 4. The newly created object is returned
 
 Example using ```_init```:
-```
+```node
 o({
   port: 8080,
   app: null,
@@ -253,7 +253,7 @@ TBD
 Maker allows for the easy creation of command line programs with built-in argument parsing. You can use the ```_init``` method to define a top-level entry point, or "main" function, to your application. 
 
 Example:
-```
+```node
 var o = require('maker').o(module);
 var _o = require('maker')._o(module);
 
