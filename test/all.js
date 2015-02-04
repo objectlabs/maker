@@ -24,4 +24,4 @@
 
 require('./basic-instantiation-tests');
 require('./inheritance-tests');
-
+console.log("All tests pass")
