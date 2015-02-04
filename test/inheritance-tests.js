@@ -21,7 +21,6 @@ var Animal = oo({
 var Cat = oo({
   _type: Animal,
   _C: function() {
-    console.log("--> Cat._C()")
     this.name = "Cat"
   },
 
@@ -75,11 +74,3 @@ var sa = o({
   _type: SubAnimal
 })
 assert(sa.isHappy)
-
-/*
-a.say()
-c.say()
-a.say()
-c2.say()
-console.log(c2.meow)
-*/
