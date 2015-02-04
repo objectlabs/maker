@@ -40,6 +40,24 @@ assert(a2 instanceof Animal)
 // prototype vs local fields
 a1.instanceCache.a = 1
 assert(a2.instanceCache.a == undefined)
-
 a1.classCache.a = 1
 assert(a2.classCache.a == 1)
+
+// can override prototype property on instance
+var a3 = o({
+  _type: Animal,
+  name: "fluffy",
+  classCache: {p: 6}
+})
+
+assert(a3.classCache.p == 6)
+assert(a2.classCache.a == Animal.prototype.classCache.a == 1)
+
+var a4 = o({
+  _type: a3,
+  classCache: {r: 7}
+})
+
+assert(a4.classCache.r == 7)
+assert(a3.classCache.p == 6)
+assert(a2.classCache.a == Animal.prototype.classCache.a == 1)
