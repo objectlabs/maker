@@ -22,17 +22,6 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/*******************************************************************************
- * run
- */
-function run() {
-    require('./maker').run();
-    require('./maker2').run();
-}
+require('./basic-instantiation-tests');
+require('./inheritance-tests');
 
-/*******************************************************************************
- * main
- */
-if (require.main == module) {
-    run();
-}
