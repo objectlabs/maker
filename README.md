@@ -65,7 +65,7 @@ of:
 * An optional ```_type``` field, whose value may be either a ```Function``` or
   (representing a class constructor) or another object. 
 
-* A series of name / value pairs specifying the fields of the object
+* A series of name / value pairs specifying the properties of the object
 
 ##### Some examples
 
