@@ -8,10 +8,17 @@ Maker
 
 Maker is a simple and powerful OO toolkit for Javascript.
 
-The central design goal of Maker is to provide a completely
-delcarative mechanism for defining classes and instances of classes
-(objects). Maker accomodates both the _classical_ and _prototype_
-patterns of implementing OO in a simple and unified manner. 
+The central design goal of Maker is to provide a delcarative mechanism for defining classes, objects (instances of classes), and configurable command-line programs. 
+
+Maker supports both the _classical_ and _prototype_ patterns of implementing OO in a simple and unified manner. In addition, Maker is a Depedency Injection framework that allows for the creation of highly configurable re-usable software components and applications. 
+
+In particular, Maker provides mechanisms for:
+
+* Defining objects and classes
+* Defining re-usable software components and managing their lifecycle
+* Defining top-level commandline interfaces with easy options parsing
+* Managing application-level configuration
+* Configuring and managing application logging
 
 Installing Maker
 ----------
