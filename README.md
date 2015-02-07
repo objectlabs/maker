@@ -253,10 +253,9 @@ o({
 
 TBD
 
+### Creating command line programs with Maker
 
-### Creating command line applications with Maker
-
-Maker allows for the easy creation of command line programs with built-in argument parsing. You can use the ```_init``` method to define a top-level entry point, or "main" function, to your application. 
+Maker allows for the easy creation of command line programs with built-in argument parsing. You can use the ```_main``` method to define a top-level entry point, or "main" function, to your application. 
 
 Example:
 ```node
@@ -284,7 +283,7 @@ module.exports = o({
     }
   }
   
-  _init: function(options) {
+  _main: function(options) {
     this.port = options.port
     this._app = express.createServer()
     this._app.listen(this.port)
@@ -310,6 +309,13 @@ Options:
 
 The arg-parser used by Maker is ```nomnom```. For full documentation on how you specify ```cmdargs``` please see https://github.com/harthur/nomnom
 
+### Maker and Fibers
+
+TODO
+
 ### Todo
 * Document _o
+* Document Fibers
+* Revisit _super
+* 
 
