@@ -83,11 +83,7 @@ which is the same as
 o({_type : Object})
 ```
 
-which simply evaluates to
-
-```node
-{}
-```
+which simply evaluates to ```{}```.
 
 Simple object
 
