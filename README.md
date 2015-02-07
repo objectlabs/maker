@@ -230,10 +230,11 @@ o({
 
 Object creation via the ```o``` operator follows this sequence:
 
-1. The ```_type``` field is evaluated. If it is a Class constructor a new instance of that Class is created. If it is an object that object is cloned and used as the new objects prototype. If no ```_type``` is supplied the default value of ```Object``` is used.
-2. All field definitions in the object passed to the ```o``` operator are added to the newly created object
-3. If the object has an ```_init``` method that method is called
-4. The newly created object is returned
+1. The ```_type``` field is evaluated. If it is a function it is then considered a constructor and a new instance of that Class is created. If it is an object that object is used as the new object's prototype. If no ```_type``` is supplied the default value of ```Object``` is used.
+1. If the class defines a constructor (via ```_C```) that constructor is called after calling the constructor of the class's ```_type``` (constructors defined by ```_C``` are automatically chained). 
+1. All field definitions in the object passed to the ```o``` operator are added to the newly created object
+1. If the object has an ```_init``` method that method is called
+1. The newly created object is returned
 
 Example using ```_init```:
 ```node
