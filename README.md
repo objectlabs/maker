@@ -151,15 +151,17 @@ o({_type : Person,
 
 ### The ```oo``` operator
 
-The ```oo``` operator is used to make classes. All ```oo```
-expressions evaluate to a value that is a ```Function``` that can be
-used as a constructor. Like the ```o``` operator, the ```oo```
-operator takes a single object argument. In this case the object
-specification is the specification for a class. The ```_type``` field
-can be used to specify superclass to extend and must be a
-```Function``` value.
+The ```oo``` operator is used to make classes. All ```oo``` expressions evaluate to a value that is a ```Function``` that can be used as a constructor. Like the ```o``` operator, the ```oo``` operator takes a single object argument. In this case the object specification is the specification for a class. The ```_type``` field can be used to specify superclass to extend and must be a ```Function``` value.
 
-##### _super
+##### Defining contructors and super-classes
+
+Classes defined with ```oo``` can optionally specify a constructor, which is a function to be used to initialize instance properties for objects of the defined class. Constructor functions are specified via the meta property ```_C```. 
+
+Classes can define a super-class from which it extends via the ```_type``` meta property (the same way object specify which class they are an instance of when using the ```o``` operator). 
+
+If the class being defined has a super-class Maker will automatically chain constructors, calling the constructor of the super-class before calling the constructor of the class being defined.
+
+##### _super (XXX implemented -- not final)
 
 You can use the ```_super``` method to call methods on your superclass. The method takes the name of the method as a string and returns a function. 
 
@@ -170,26 +172,34 @@ var o = require('maker').o(module)
 var oo = require('maker').oo(module)
 
 var Animal = oo({
-   name : "some animal",
-   age : 0,
-   weight : null,
-   say : function() {
-      return this.name;
-   }
-});
+  _C: function() {
+    this.name = "Some animal"
+    this.age = 0
+    this.weight = 0
+  },
+   
+  say : function() {
+    return this.name;
+  }
+})
 
 var Dog = oo({
    _type : Animal,
-   name : "some dog",
-   say : function() {
-      return "woof: " + this._super('say')()    // delegating to superclass
-   }
-});
+   _C: function() {
+    this.name = "Some Dog"
+  },
+  
+  say : function() {
+    return "woof: " + this._super('say')()    // delegating to superclass
+  }
+})
 
 var fido = o({
    _type : Dog,
    name : "Fido",
-});
+   age: 3,
+   weight: 10
+})
 ```
 
 ### Defining properties
@@ -202,22 +212,7 @@ o({
 })
 ```
 
-or they can be define more explicitly as you would with Javascript's [```Object.defineProperty```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-
-```node
-o({
-  name: {
-    $property: {
-      value: "John Smith"
-      configurable: true,
-      enumerable: true,
-      writable: false
-    }
-  } 
-}) 
-```
-
-You can also define dynamic properties via getters and setters
+or they can be defined dynamically with getters and setters as you would with Javascript's [```Object.defineProperty```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 
 ```node
 o({
