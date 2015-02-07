@@ -143,7 +143,7 @@ o({_type : Person,
       street : "100 Foo St.",
       city : "San Francisco",
       state : "CA",
-      zip : 93212
+      zip : "93212"
    }
 });
 
