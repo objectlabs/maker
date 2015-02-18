@@ -24,4 +24,5 @@
 
 require('./basic-instantiation-tests');
 require('./inheritance-tests');
+//require('./reference-tests');
 console.log("All tests pass")

@@ -3,11 +3,13 @@ var oo = require('../../lib/maker').oo(module);
 
 module.exports = oo({
   _C: function() {
-    console.log("--> Animal._C()")
     this.cache = {}
     this.isHappy = true
     this.name = "Animal"
   },
+
+  staticCache: {},
+
   say: function() {
     return "I am a " + this.name + " - Am I happy? " + this.isHappy
   },
