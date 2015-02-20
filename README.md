@@ -49,11 +49,12 @@ To run unit tests
 Using Maker
 ----------
 
-The core of Maker is comprised of three operators:
+The core of Maker is comprised of four operators:
 
 * The ```o``` operator makes objects
 * The ```oo``` operator makes classes
 * The ```_o``` operator resolves components by name
+* The ```__``` operator that spawns Fibers
 
 ### The ```o``` operator
 
@@ -138,13 +139,13 @@ o({_type : Person,
    name : "Jo Smith",
    email : "jo@smith.com",
    age : 35,
-   address = {
+   address = o({
       _type : Address
       street : "100 Foo St.",
       city : "San Francisco",
       state : "CA",
       zip : "93212"
-   }
+   })
 });
 
 ```
