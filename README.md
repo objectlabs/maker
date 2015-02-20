@@ -81,7 +81,7 @@ o({})
 which is the same as
 
 ```node
-o({_type : Object})
+o({_type: Object})
 ```
 
 which simply evaluates to ```{}```.
@@ -91,8 +91,8 @@ Simple object
 ```node
 var o = require('maker').o(module)
 
-o({a : 1,
-   b : 2});
+o({a: 1,
+   b: 2});
 ```
 
 
@@ -107,10 +107,10 @@ function Person() {
    this.age = 0;
 }
 
-o({_type : Person,
-   name : "Jo Smith",
-   email : "jo@smith.com",
-   age : 35});
+o({_type: Person,
+   name: "Jo Smith",
+   email: "jo@smith.com",
+   age: 35});
 ```
 
 Specifying another object as a prototype
@@ -119,15 +119,15 @@ Specifying another object as a prototype
 var o = require('maker').o(module)
 
 var Person = o({
-   name : "Some Person",
-   email : null,
-   age : 0
+   name: "Some Person",
+   email: null,
+   age: 0
 });
 
-o({_type : Person,
-   name : "Jo Smith",
-   email : "jo@smith.com",
-   age : 35});
+o({_type: Person,
+   name: "Jo Smith",
+   email: "jo@smith.com",
+   age: 35});
 ```
 
 Nested objects
@@ -135,16 +135,16 @@ Nested objects
 ```node
 var o = require('maker').o(module)
 
-o({_type : Person,
-   name : "Jo Smith",
-   email : "jo@smith.com",
-   age : 35,
+o({_type: Person,
+   name: "Jo Smith",
+   email: "jo@smith.com",
+   age: 35,
    address = o({
-      _type : Address
-      street : "100 Foo St.",
-      city : "San Francisco",
-      state : "CA",
-      zip : "93212"
+      _type: Address
+      street: "100 Foo St.",
+      city: "San Francisco",
+      state: "CA",
+      zip: "93212"
    })
 });
 
@@ -179,25 +179,25 @@ var Animal = oo({
     this.weight = 0
   },
    
-  say : function() {
+  say: function() {
     return this.name;
   }
 })
 
 var Dog = oo({
-   _type : Animal,
+   _type: Animal,
    _C: function() {
     this.name = "Some Dog"
   },
   
-  say : function() {
+  say: function() {
     return "woof: " + this._super('say')()    // delegating to superclass
   }
 })
 
 var fido = o({
-   _type : Dog,
-   name : "Fido",
+   _type: Dog,
+   name: "Fido",
    age: 3,
    weight: 10
 })
