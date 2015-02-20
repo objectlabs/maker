@@ -8,8 +8,6 @@ var assert = require('assert');
  */
 var a = _o('./lib/SomeAnimal')
 
-console.log(a.cache)
-console.log(a.friend.staticCache)
 assert(a.friend.staticCache)
 assert(a.cache)
 assert(a.isHappy)

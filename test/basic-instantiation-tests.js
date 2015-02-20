@@ -46,7 +46,7 @@ assert(a2.classCache.a == 1)
 // can override prototype property on instance
 var a3 = o({
   _type: Animal,
-  name: "fluffy",
+  name: "Fluffy",
   classCache: {p: 6}
 })
 
@@ -55,9 +55,23 @@ assert(a2.classCache.a == Animal.prototype.classCache.a == 1)
 
 var a4 = o({
   _type: a3,
-  classCache: {r: 7}
+  classCache: {r: 7},
+  a3: a3
 })
 
 assert(a4.classCache.r == 7)
 assert(a3.classCache.p == 6)
 assert(a2.classCache.a == Animal.prototype.classCache.a == 1)
+
+var a5 = o({
+  _type: Animal,
+  name: "Lucky",
+  luckyCharm: o({
+    _type: Animal,
+    name: "Lucky's charm"
+  }),
+  a3: a3
+})
+assert(a5.isHappy == true)
+assert(a4.a3 == a5.a3) // same pointer
+
