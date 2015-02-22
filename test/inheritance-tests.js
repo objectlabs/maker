@@ -14,7 +14,7 @@ var Animal = oo({
 
   classCache: {},
   say: function() {
-    return "I am a " + this.name + "- Am I happy?" + this.isHappy
+    return "I am a " + this.name + " - Am I happy? " + this.isHappy
   },
 })
 
@@ -22,6 +22,10 @@ var Cat = oo({
   _type: Animal,
   _C: function() {
     this.name = "Cat"
+  },
+
+  say: function() {
+    return "Super: " + this._super('say')()
   },
 
   meow: { 
@@ -74,3 +78,7 @@ var sa = o({
   _type: SubAnimal
 })
 assert(sa.isHappy)
+
+// _super
+assert(c2.say() === "Super: I am a fluffy - Am I happy? true")
+
