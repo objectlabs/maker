@@ -75,3 +75,9 @@ var a5 = o({
 assert(a5.isHappy == true)
 assert(a4.a3 == a5.a3) // same pointer
 
+// testing make with targetType
+var a6 = o({
+  name: "Kiki"
+}, null, Animal)
+assert(a6.isHappy === true)
+
