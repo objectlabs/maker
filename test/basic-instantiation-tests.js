@@ -12,6 +12,10 @@ var Animal = oo({
     this.name = "Animal"
   },
 
+  _init: function() {
+    this.initCalledByAnimalInit = true
+  },
+
   classCache: {},
 
   say: function() {
@@ -31,6 +35,7 @@ var a2 = o({
 // instanceof 
 assert(a1.isHappy == true)
 assert(a1.name == "Animal")
+assert(a1.initCalledByAnimalInit == true)
 assert(a1 instanceof Animal)
 
 assert(a2.isHappy == true)
@@ -80,4 +85,16 @@ var a6 = o({
   name: "Kiki"
 }, null, Animal)
 assert(a6.isHappy === true)
+
+// test of calling constructor of oo defined class directly and having _init called
+var FunAnimal = oo({
+   _type: Animal,
+  _init: function() {
+    this.isHappy = false
+  }
+})
+
+var a7 = new FunAnimal()  
+assert(a7.isHappy == false)
+assert(a7.initCalledByAnimalInit != true) // init should not automatically chain
 
