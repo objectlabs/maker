@@ -1,25 +1,25 @@
 {
-    "name": "maker",
-    "version": "0.1.0",
-    "description": "Simple object toolkit for Javascript",
-    "keywords": ["maker", "makerjs"],
-    "contributors": [
-        "Will Shulman <will@objectlabs.com>"
-    ],
-    "repository" : { 
-        "type" : "git",
-        "url" : "https://github.com/objectlabs/maker.git"
-    },
-
-    "main": "./lib/maker.js",
-    "directories" : {
-        "lib" : "./lib",
-        "bin" : "./bin"
-    },
-    "engines": { "node": ">= 0.5.2" },
-    "dependencies" : {
-        "nomnom": "1.8.0",
-        "fibers-utils": "git+ssh://git@github.com:objectlabs/fibers-utils.git"
-    },
-    "preferGlobal": false
+  "name": "maker",
+  "version": "0.1.0",
+  "description": "Simple object toolkit for Javascript",
+  "keywords": ["maker", "makerjs"],
+  "contributors": [
+    "Will Shulman <will@objectlabs.com>"
+  ],
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/objectlabs/maker.git"
+  },
+  
+  "main": "./lib/maker.js",
+  "directories" : {
+    "lib" : "./lib",
+    "bin" : "./bin"
+  },
+  "engines": { "node": ">= 0.5.2" },
+  "dependencies" : {
+    "nomnom": "1.8.0",
+    "fibers-utils": "git+ssh://git@github.com:objectlabs/fibers-utils.git#v1.0.2"
+  },
+  "preferGlobal": false
 }
